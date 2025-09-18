@@ -51,7 +51,7 @@ def reposition(fox):
         pass
 
 def main():
-    cmd = ["swaymsg", "-t", "get_tree"]
+    cmd = ["swaymsg", "-r", "-t", "get_tree"]
     proc = subprocess.run(cmd, capture_output=True, text=True, check=True)
     tree = json.loads(proc.stdout)
     foxes = walk(tree)
